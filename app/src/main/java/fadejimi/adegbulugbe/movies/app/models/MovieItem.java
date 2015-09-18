@@ -14,12 +14,13 @@ public class MovieItem {
 
     }
 
-    public MovieItem(int imageId, String name, String starring, String grade,
+    public MovieItem(int imageId, String name, String starring, String runningTime, String grade,
                           String date, String url)
     {
         setImageId(imageId);
         setMovieName(name);
         setStarring(starring);
+        setRunningTime(runningTime);
         setGrade(grade);
         setDate(date);
         setURL(url);
@@ -43,6 +44,11 @@ public class MovieItem {
     public void setStarring(String starr)
     {
         starring = starr;
+    }
+
+    public void setRunningTime(String time)
+    {
+        runningTime = time;
     }
 
     public void setGrade(String g)
@@ -85,4 +91,8 @@ public class MovieItem {
         return url;
     }
 
+    public String getRunningTime()
+    {
+        return runningTime;
+    }
 }

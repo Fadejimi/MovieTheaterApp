@@ -4,7 +4,9 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.IBinder;
 import static fadejimi.adegbulugbe.movies.app.MainActivity.MOVIE_DATE;
 import static fadejimi.adegbulugbe.movies.app.MainActivity.MOVIE_NAME;
@@ -16,6 +18,7 @@ public class MyAlarmService extends Service
 {
     String movie_name="";
     String movie_date = "";
+    SharedPreferences pref;
 
     private NotificationManager mManager;
 
@@ -38,8 +41,10 @@ public class MyAlarmService extends Service
     public void onStart(Intent intent, int startId)
     {
         super.onStart(intent, startId);
-        movie_name = intent.getStringExtra("MOVIE_NAME");
-        movie_date = intent.getStringExtra("MOVIE_DATE");
+
+        pref = this.getSharedPreferences("options", Context.MODE_PRIVATE);
+        movie_name = pref.getString(MOVIE_NAME, "");
+        movie_date = pref.getString(MOVIE_DATE, "");
 
         mManager = (NotificationManager) this.getApplicationContext().getSystemService(this.getApplicationContext().NOTIFICATION_SERVICE);
         Intent intent1 = new Intent(this.getApplicationContext(),MainActivity.class);
@@ -50,7 +55,8 @@ public class MyAlarmService extends Service
 
         PendingIntent pendingNotificationIntent = PendingIntent.getActivity( this.getApplicationContext(),0, intent1,PendingIntent.FLAG_UPDATE_CURRENT);
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
-        notification.setLatestEventInfo(this.getApplicationContext(), "AlarmManagerDemo", "This is a test message!", pendingNotificationIntent);
+        notification.setLatestEventInfo(this.getApplicationContext(), "Movie Theater Notification", movie_name + "\nDates: " + movie_date,
+                pendingNotificationIntent);
 
         mManager.notify(0, notification);
     }

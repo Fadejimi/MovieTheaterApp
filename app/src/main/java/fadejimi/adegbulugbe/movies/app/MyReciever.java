@@ -3,6 +3,7 @@ package fadejimi.adegbulugbe.movies.app;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 
 import static fadejimi.adegbulugbe.movies.app.MainActivity.MOVIE_DATE;
 import static fadejimi.adegbulugbe.movies.app.MainActivity.MOVIE_NAME;

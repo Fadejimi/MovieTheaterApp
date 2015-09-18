@@ -82,6 +82,7 @@ public class MainActivity extends ActionBarActivity {
         item1.setImageId(R.drawable.inside_out);
         item1.setMovieName("Inside Out");
         item1.setStarring("Amy Poehler, Bill Hader");
+        item1.setRunningTime("96 mins");
         item1.setGrade("G");
         item1.setDate("Fri to Thur : 10:30AM");
         item1.setURL("https://www.youtube.com/watch?v=seMwpP0yeu4");
@@ -91,6 +92,7 @@ public class MainActivity extends ActionBarActivity {
         item2.setImageId(R.drawable.man_from_uncle);
         item2.setMovieName("Man From Uncle");
         item2.setStarring("Henry Cavill, Armie Hammer");
+        item2.setRunningTime("110 mins");
         item2.setDate("Fri to Thur : 10:30AM");
         item2.setGrade("18");
         item2.setURL("https://www.youtube.com/watch?v=-x08iNZ8Mfc");
@@ -100,6 +102,7 @@ public class MainActivity extends ActionBarActivity {
         item3.setImageId(R.drawable.hitman);
         item3.setMovieName("Hitman: Agent 47");
         item3.setStarring("Rupert Friend, Hannah Ware");
+        item3.setRunningTime("110 mins");
         item3.setDate("Fri to Sun : 1:55PM, 9:25PM");
         item3.setGrade("18");
         item3.setURL("https://www.youtube.com/watch?v=alQlJDRnQkE");
@@ -109,6 +112,7 @@ public class MainActivity extends ActionBarActivity {
         item4.setImageId(R.drawable.dragon_blade);
         item4.setMovieName("Dragon Blade");
         item4.setStarring("Jackie Chan, John Cusack");
+        item4.setRunningTime("130 mins");
         item4.setDate("Fri to Thur : 2:20PM, 4:20PM");
         item4.setGrade("18");
         item4.setURL("https://www.youtube.com/watch?v=hfr6fVpWBiU");
@@ -118,6 +122,7 @@ public class MainActivity extends ActionBarActivity {
         item5.setImageId(R.drawable.stolen_lives);
         item5.setMovieName("Stolen Lives");
         item5.setStarring("Alex Ekubo, Jide Kosoko");
+        item5.setRunningTime("96 mins");
         item5.setDate("Fri to Sun : 12:25PM, 9:10PM");
         item5.setGrade("TBC");
         item5.setURL("https://www.youtube.com/watch?v=gHqbvh_Rn5M");
@@ -127,6 +132,7 @@ public class MainActivity extends ActionBarActivity {
         item6.setImageId(R.drawable.transporter);
         item6.setMovieName("The Transporter Refueled");
         item6.setStarring("Ed Skrein, Loan Chabanol, ");
+        item1.setRunningTime("110 mins");
         item6.setDate("Mon to Thur : 12:00PM, 3:40PM");
         item6.setGrade("15");
         item6.setURL("https://www.youtube.com/watch?v=f6xrW4YmOkw");

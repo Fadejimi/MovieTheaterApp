@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,7 +23,7 @@ public class MovieNotificationActivity extends ActionBarActivity {
     private TextView nameTextView, dateTextView, timeTextView;
     private Button notificationButton;
     static final int TIME_DIALOG = 0;
-
+    private SharedPreferences.Editor editor;
     // variables to save selected time
     private int hour, minute;
 
@@ -108,6 +109,12 @@ public class MovieNotificationActivity extends ActionBarActivity {
                     Intent myIntent = new Intent(MovieNotificationActivity.this, MyReciever.class);
                     myIntent.putExtra(MOVIE_NAME, movie_name);
                     myIntent.putExtra(MOVIE_DATE, movie_dates);
+
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("options", MODE_PRIVATE);
+                    editor = pref.edit();
+                    editor.putString(MOVIE_NAME, movie_name);
+                    editor.putString(MOVIE_DATE, movie_dates);
+                    editor.commit();
 
                     pendingIntent = PendingIntent.getBroadcast(MovieNotificationActivity.this, 0, myIntent, 0);
 
